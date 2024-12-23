@@ -1,0 +1,132 @@
+/* Сброс стандартных отступов */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    font-size: 1.5rem;
+    color: #ffeb3b;
+}
+
+.navbar ul li a:active {
+    font-size: 2rem; /* Увеличиваем размер шрифта при нажатии */
+    color: #ffeb3b;
+}
+
+.content {
+    text-align: center;
+    margin: 50px auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* карта */
+
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Стили меню */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}
+
+/* Контейнер для карты */
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px); /* Высота карты с учётом меню */
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#map {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: mapFadeIn 1.2s ease-out forwards;
+}
+
+/* Анимация появления карты */
+@keyframes mapFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
