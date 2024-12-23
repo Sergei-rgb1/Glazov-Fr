@@ -1,37 +1,38 @@
-const navLinks = document.querySelectorAll("header nav a");
+function openModal() {
+    // Показываем модальное окно
+    const modal = document.getElementById('mapModal');
+    modal.style.display = 'flex';
 
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        // Удаляем active со всех ссылок
-        navLinks.forEach(nav => nav.classList.remove("active"));
-        // Добавляем active только на выбранную ссылку
-        this.classList.add("active");
+    // Инициализация карты
+    ymaps.ready(function () {
+        const myMap = new ymaps.Map("map", {
+            center: [58.144710, 52.673610], // Центр карты между двумя точками
+            zoom: 14
+        });
+
+        // Добавляем маршрут
+        const multiRoute = new ymaps.multiRouter.MultiRoute({
+            referencePoints: [
+                [58.144710, 52.693818], // Улица Карла Маркса, 1
+                [58.143518, 52.653610]  // Парк имени Горького
+            ],
+            params: {
+                routingMode: 'auto' // Автомобильный маршрут
+            }
+        }, {
+            boundsAutoApply: true // Автоматическая подстройка карты
+        });
+
+        // Добавляем маршрут на карту
+        myMap.geoObjects.add(multiRoute);
     });
-});
+}
 
+function closeModal() {
+    // Закрываем модальное окно
+    const modal = document.getElementById('mapModal');
+    modal.style.display = 'none';
 
-
-ymaps.ready(init);
-
-function init() {
-    const map = new ymaps.Map("map", {
-        center: [56.841, 53.2], // Координаты центра карты (Глазов)
-        zoom: 12,
-        controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
-    });
-
-    // Добавление метки на карту
-    const placemark = new ymaps.Placemark(
-        [56.841, 53.2],
-        {
-            hintContent: 'Привет, Глазов!',
-            balloonContent: 'Точка встречи'
-        },
-        {
-            preset: 'islands#icon',
-            iconColor: '#0095b6'
-        }
-    );
-
-    map.geoObjects.add(placemark);
+    // Очищаем содержимое карты, чтобы избежать повторной инициализации
+    document.getElementById('map').innerHTML = '';
 }
