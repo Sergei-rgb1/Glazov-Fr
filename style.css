@@ -1,9 +1,116 @@
 /* Сброс стандартных отступов */
+/* Общие стили */
+
+    
+
+/* менюшка сайта */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    background: #1a1a2e; /* Тёмный фон */
+    color: #ffffff; /* Белый текст */
 }
+
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header.navbar h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f72585; /* Яркий неоновый розовый */
+    text-shadow: 0 0 10px #f72585, 0 0 20px #ff007f, 0 0 30px #ff007f;
+}
+
+header.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header.navbar ul li {
+    margin: 0 15px;
+}
+
+header.navbar ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #d1d1e9;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+header.navbar ul li a:hover,
+header.navbar ul li a.active {
+    color: #00f2ff; /* Неоновый голубой */
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00e5ff, 0 0 30px #00d9ff;
+}
+
+/* Стили для контента */
+main.content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+main.content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f72585;
+    text-shadow: 0 0 10px #f72585, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    margin-bottom: 20px;
+}
+
+main.content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #e0e0e0;
+    text-shadow: 0 0 5px #ffffff;
+    line-height: 1.6;
+}
+
+/* Анимации */
+header.navbar ul li a:hover {
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #00e5ff, 0 0 30px #00f2ff;
+    }
+    50% {
+        text-shadow: 0 0 15px #ffffff, 0 0 25px #00d9ff, 0 0 35px #00e5ff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .navbar {
